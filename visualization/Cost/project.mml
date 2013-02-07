@@ -1,0 +1,213 @@
+{
+  "bounds": [
+    -180,
+    14,
+    180,
+    72
+  ],
+  "center": [
+    -94,
+    38,
+    4
+  ],
+  "format": "png",
+  "interactivity": {
+    "fields": [
+      "cty_name",
+      "state_name",
+      "pereligible",
+      "pernoneligible",
+      "maxeligible",
+      "lowserved",
+      "midlowserved",
+      "midhighserved",
+      "highserved",
+      "lownotserved",
+      "midlownotserved",
+      "midhighnotserved",
+      "highnotserved",
+      "gid"
+    ],
+    "layer": "cqfttpcty",
+    "template_teaser": "<table>\n  <tr><strong><center>{{{cty_name}}}, {{{state_name}}}</center></strong></tr>\n<tr><center>Projected percent of locations in the county able to receive funding</center></tr>\n  <tr><center><img src=https://chart.googleapis.com/chart?cht=p&chs=250x100&chl=Eligible|Ineligible&chco=6f6f6f,c3c3c3&chp=-.6&chd=t:{{{pereligible}}},{{{pernoneligible}}} alt=\"\"/></center>\n</tr>\n<tr><center>Distribution of number of eligible locations by cost category in the county</center></tr>\n  <tr><center><img src=http://chart.apis.google.com/chart?chxl=1:|%3E$300|$150-$300|$75-$150|%3C=$75|&chxr=0,0,{{{maxeligible}}}&chxt=x,y&chbh=a&chs=250x100&cht=bhs&chco=6f6f6f,c3c3c3&chds=0,{{{maxeligible}}},0,{{{maxeligible}}}&chd=t:{{{lowserved}}},{{{midlowserved}}},{{{midhighserved}}},{{{highserved}}}|{{{lownotserved}}},{{{midlownotserved}}},{{{midhighnotserved}}},{{{highnotserved}}} alt=\"\"/></center></tr>\n<tr><center><center><span style='color:#6f6f6f'>▉  </span>Served by Telco<span style='color:#c3c3c3'>  ▉  </span> Not Served by Telco</center></center></tr>\n</table\n\n\n\n"
+  },
+  "minzoom": 2,
+  "maxzoom": 10,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss",
+    "data-colors",
+    "labels",
+    "data"
+  ],
+  "Layer": [
+    {
+      "id": "countries",
+      "name": "countries",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "geometry": "polygon",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.3.0/cultural/10m-admin-0-countries.zip",
+        "type": "shape"
+      }
+    },
+    {
+      "geometry": "polygon",
+      "id": "state-name",
+      "name": "state-name",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-1-states-provinces-shp.zip",
+        "id": "state-name",
+        "srs": "",
+        "project": "Cost"
+      }
+    },
+    {
+      "geometry": "polygon",
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select gid, geom, county.cty_fips, cty_name, state_name, cable,  lowserved,\n  lownotserved, midlowserved, midlownotserved, midhighserved, \n  midhighnotserved, highserved, highnotserved, maxeligible,\n  pernoneligible,  pereligible \nfrom carto.county , analysis.cq_fttp_cty\nwhere county.cty_fips=cq_fttp_cty.cty_fips\n) as data",
+        "extent": "",
+        "key_field": "gid",
+        "geometry_field": "geom",
+        "host": "localhost",
+        "port": "54321",
+        "dbname": "feomike",
+        "id": "cqfttpcty",
+        "project": "Cost",
+        "srs": null
+      },
+      "id": "cqfttpcty",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "cqfttpcty"
+    },
+    {
+      "geometry": "polygon",
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from analysis.cost_fttp_poly_5 ) as cost_poly",
+        "extent": "",
+        "key_field": "gid",
+        "geometry_field": "geom",
+        "host": "localhost",
+        "port": "54321",
+        "dbname": "feomike",
+        "id": "cost_poly",
+        "project": "Cost",
+        "srs": null
+      },
+      "id": "cost_poly",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "cost_poly"
+    },
+    {
+      "geometry": "polygon",
+      "id": "lake",
+      "name": "lake",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.3.0/physical/10m-lakes.zip",
+        "id": "lake",
+        "srs": "",
+        "project": "Cost"
+      }
+    },
+    {
+      "geometry": "polygon",
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select *\nfrom carto.county ) as county",
+        "extent": "",
+        "key_field": "gid",
+        "geometry_field": "geom",
+        "port": "54321",
+        "dbname": "feomike",
+        "id": "cty_cq_fttp",
+        "project": "Cost",
+        "srs": null
+      },
+      "id": "county",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "county"
+    },
+    {
+      "geometry": "point",
+      "id": "city",
+      "name": "city",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.3.0/cultural/10m-populated-places-simple.zip",
+        "id": "city",
+        "srs": "",
+        "project": "Cost"
+      }
+    },
+    {
+      "geometry": "polygon",
+      "id": "land",
+      "name": "land",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.3.0/physical/10m-land.zip",
+        "id": "land",
+        "srs": "",
+        "project": "Cost"
+      }
+    },
+    {
+      "geometry": "linestring",
+      "id": "coastline",
+      "name": "coastline",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.3.0/physical/10m-coastline.zip",
+        "id": "coastline",
+        "srs": "",
+        "project": "Cost"
+      }
+    },
+    {
+      "geometry": "linestring",
+      "id": "country-border",
+      "name": "country-border",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.3.0/cultural/10m-admin-0-boundary-lines-land.zip",
+        "id": "country-border",
+        "srs": "",
+        "project": "Cost"
+      }
+    },
+    {
+      "geometry": "linestring",
+      "id": "state-line",
+      "name": "state-line",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.3.0/cultural/10m-admin-1-states-provinces-lines-shp.zip",
+        "id": "state-line",
+        "srs": "",
+        "project": "Cost"
+      }
+    }
+  ],
+  "name": "Broadband Cost Model",
+  "description": "This map shows costs of future broadband deployment based on a large financial model.  This model takes into account current broadband and telecommunications infrastructure as well as current population and business locations.    The map shows three cost structure ranges and wether these regions have current broadband availability or not. ",
+  "attribution": "<img align=\"left\" src=",
+  "legend": "<table>\n<tr>\n  <th colspan=\"3\"><strong>Broadband Cost Model</strong></th>\n<tr>\n  <th colspan=\"3\"><center><span style='color:#fff4f9'>▉</span> Unpopulated <span style='color:#fffde3'>▉</span>Served by Cable</center>\n</tr>\n<tr>\n  <td></td>\n  <td><center>Served</center></td>\n  <td><center>Unserved</center></td>\n</tr>\n<tr>\n  <td><center>Less than $75 per location</center></td>\n  <td><center><span style='color:#9ea1bf'>▉</span></center></td>\n  <td><center><span style='color:#464855'>▉</span></center></td>\n</tr>\n<tr>\n  <td><center>$75 to $150 per location</center></td>\n  <td><center><span style='color:#97bed0'>▉</span></center></td>\n  <td><center><span style='color:#7593a1'>▉</span></center></td>\n</tr>\n<tr>\n  <td><center>$150 to $300 per location</center></td>\n  <td><center><span style='color:#ffb901'>▉</span></center></td>\n  <td><center><span style='color:#d08603'>▉</span></center></td>\n</tr>\n<tr>\n  <td><center>Greater than $300 per location</center></td>\n  <td><center><span style='color:#9ad657'>▉</span></center></td>\n  <td><center><span style='color:#639e0a'>▉</span></center></td>\n</tr> \n</table>",
+  "version": "1.0.0"
+}

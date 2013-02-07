@@ -1,0 +1,174 @@
+{
+  "bounds": [
+    -126,
+    24,
+    -66,
+    50
+  ],
+  "center": [
+    -102.44053649902321,
+    38.1191572886651,
+    4
+  ],
+  "format": "png",
+  "interactivity": false,
+  "minzoom": 2,
+  "maxzoom": 10,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss",
+    "data-colors",
+    "labels",
+    "data"
+  ],
+  "Layer": [
+    {
+      "id": "countries",
+      "name": "countries",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "geometry": "polygon",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.3.0/cultural/10m-admin-0-countries.zip",
+        "type": "shape"
+      }
+    },
+    {
+      "geometry": "point",
+      "name": "Data-1",
+      "id": "Data-1",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/michaelsbyrne/Documents/MapBox/data/KML_Samples.kml"
+      }
+    },
+    {
+      "geometry": "polygon",
+      "name": "Cost_All_0015",
+      "id": "Cost_All_0015",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/michaelsbyrne/Documents/MapBox/data/cost_All_0015.zip"
+      }
+    },
+    {
+      "geometry": "polygon",
+      "name": "Cost_All_01",
+      "id": "Cost_All_01",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/michaelsbyrne/Documents/MapBox/data/cost_All_01.zip"
+      }
+    },
+    {
+      "geometry": "polygon",
+      "name": "USFReg",
+      "id": "USFReg",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/michaelsbyrne/Documents/MapBox/data/USFreg_new.shp",
+        "id": "USFReg",
+        "project": "Cost"
+      }
+    },
+    {
+      "geometry": "polygon",
+      "id": "state-name",
+      "name": "state-name",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-1-states-provinces-shp.zip",
+        "id": "state-name",
+        "srs": "",
+        "project": "Cost"
+      }
+    },
+    {
+      "geometry": "polygon",
+      "id": "lake",
+      "name": "lake",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.3.0/physical/10m-lakes.zip",
+        "id": "lake",
+        "srs": "",
+        "project": "Cost"
+      }
+    },
+    {
+      "geometry": "point",
+      "id": "city",
+      "name": "city",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.3.0/cultural/10m-populated-places-simple.zip",
+        "id": "city",
+        "srs": "",
+        "project": "Cost"
+      }
+    },
+    {
+      "geometry": "polygon",
+      "id": "land",
+      "name": "land",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.3.0/physical/10m-land.zip",
+        "id": "land",
+        "srs": "",
+        "project": "Cost"
+      }
+    },
+    {
+      "geometry": "linestring",
+      "id": "coastline",
+      "name": "coastline",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.3.0/physical/10m-coastline.zip",
+        "id": "coastline",
+        "srs": "",
+        "project": "Cost"
+      }
+    },
+    {
+      "geometry": "linestring",
+      "id": "country-border",
+      "name": "country-border",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.3.0/cultural/10m-admin-0-boundary-lines-land.zip",
+        "id": "country-border",
+        "srs": "",
+        "project": "Cost"
+      }
+    },
+    {
+      "geometry": "linestring",
+      "id": "state-line",
+      "name": "state-line",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.3.0/cultural/10m-admin-1-states-provinces-lines-shp.zip",
+        "id": "state-line",
+        "srs": "",
+        "project": "Cost"
+      }
+    }
+  ],
+  "name": "Broadband Cost Model",
+  "description": "This map shows costs of future broadband deployment based on a large financial model.  This model takes into account current broadband and telecommunications infrastructure as well as current population and business locations.    The map shows three cost structure ranges and wether these regions have current broadband availability or not. ",
+  "attribution": "<img align=\"left\" src=",
+  "legend": "<p><em>Broadband Cost Model</em></p>\n\n<span style='color:#FFFDE3'>▉</span> Un-Populated <br />\n<span style='color:#B6D15B'>▉</span>Served by Cable<br />\n<span style='color:#FFBA40'>▉</span>Low Cost / Telco Served<br />\n<span style='color:#A66A00'>▉</span>Low Cost / Telco Not Served<br />\n<span style='color:#6A93D4'>▉</span>Mid Cost / Telco Served<br />\n<span style='color:#200772'>▉</span>Mid Cost / Telco Not Served<br />\n<span style='color:#FF7373'>▉</span>High Cost / Telco Served<br />\n<span style='color:#A60000'>▉</span>High Cost / Telco Not Served<br />\n<br />\n\n<p>Source: FCC</p>\n<p>September 2011</p>\n\n<img align=\"right\" src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAAASCAYAAAC5ICcsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ\nbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdp\nbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6\neD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEz\nNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJo\ndHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlw\ndGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAv\nIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RS\nZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpD\ncmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNl\nSUQ9InhtcC5paWQ6N0JGNDU3NjZDNjlBMTFFMEEwNDU5QkY4MjlFMkJGN0UiIHhtcE1NOkRvY3Vt\nZW50SUQ9InhtcC5kaWQ6N0JGNDU3NjdDNjlBMTFFMEEwNDU5QkY4MjlFMkJGN0UiPiA8eG1wTU06\nRGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3QkY0NTc2NEM2OUExMUUwQTA0\nNTlCRjgyOUUyQkY3RSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3QkY0NTc2NUM2OUExMUUw\nQTA0NTlCRjgyOUUyQkY3RSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1w\nbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PjqrMHUAAAWmSURBVHja7Jp5bFRVFMZnWrpCK6BWLWJt\naXEBa4mJFJeQgkskAa24JC5xSdRYDWIQQZHgggFRSvUPa9WgxgVJjAv+AUFpTQNq0ZpIC1hTStEq\nglXoOu0Ard9Jfq++Tqadrv+9k3xM35v77j3nu9859943+Lu7u32eeTbSNsb+ycubc50+Jghdru/i\nhR3Cn1zPEq4Xpgqmxn3C10KFR6NnjpWVlf4vLFmRcFFIm4PCl8J5QqGwMEw/q4X3hOXCXx6tnvWq\nWJgJ41mqkd3fJpwjbBXShM+FYqFaiBJmCA8I9wi5wm3CHo9Sz9zCss9GocT1XQpL4VnCjcIW4QLh\nBpbMMmGBcKfwgfAK353yaPXMEVY3VchtLwjnI5wtLJePhbTZICxjH/a7JyrPHHOLyX08HCfcKnwr\nfCSsQVTbhXzhFmG3UCBcSvWqHeCYZwoXC5cIGf20ixGSBpkkp4e5b/7NpL/RtARhyiCfyRLihjHm\nWA5VF46A/8Z1eoQ2iRHmLGzFMuLPoOpcxSmxhM8lQrkwXwjyzHb2YL8OMoC1QqfQIPwh1EHOv0IN\nRM9iD2fL8/sIo1XYizCNgHr8N1KrSJLV7PscYa6nje0fHyY5/PRvifEPk5sq/MZe8nshmsNMN3zY\ndSXxHkHATcLZQiYctJAsB9gypJGYbcQSy5j59P26MJ1qn4hPPwpHmbw04j1KvxP4vp34LO51+JvB\nKb2QtsZRKcJz4ujgpO/EYXEfJganKEzn0HY5PP0gnCZcJvwiBOi/zuVTOf7b24JkrnuE1UHDWvZP\nCdyvZjmM4fQXdAmkBQwly6IJ0ohbJFxJxrwoXE0wGSzBd7PHS0Aoto87V3ie+9lM/tP06dg0MJfr\nVPpYw2TaBL+GGOtpWw8PJuhrhImQP0l4iYPKEnzejL/G0UPCKgRkE/MEY6TySqaAeN7F93kkZi5J\nUYBgbhbeEJ4T9rMyvEnce4mjnM+7EO5arifj832IPwvx5zPPxykcKxmvmYSthPsSqrsl8JMIyZ5Z\ngch2EUsO834v/U+l3Xy3f85SGI24zNHvUL+PLHPENH6EloxosmwrFWsuRBzkoJBJMJ8hhNlUlloy\nxHxayjMmhp0QkxSy3B3nOp3vFjKR8fSf5EqmQqrOeibeMu9tsv5j3tVN5plEJigBglfAUQoJkU1l\nWcYpORduq/Glktc4uxlrCn09QyXPwaflCNvG+Ikqk+2K7zBiTeD+tVS9MgSfS2X9VPiKU/1OfGhn\nD32IqhdFTCkkRA0VM4tnHL8mEuMV9LmOcezeOxSfXkthLBM7z1USq5jUIsrxYiqIUzZzKPlfQNxA\nrYJsreP6ZU6XRuA3lNtXhZOQUUF2BhD9eAKNgqCxTFIzE+pYPSfVlUz8AUifRFXYBWnjqNJ7aFdF\nvK0Q34yvNbRfxb0jiCSO8RtJyG1UrGL8byLjG6kCNVSV2fhQybvCYrjdQfLFEnuAbUIyCebYRqrn\nBhJok2vsGcSYDI/G7THiaCBGZ3n38Wnx/AynTfjbTHwt/H2MyllK1TYhv+Vq07Nn99tPOnl5c2pw\nYJpLaPshJJONvGXu37xasEDuJ3tnQuxwLJbxu1wb4UDIRr6rj1NnfARhR/N8R8hy3DaMTXpgAO0S\nXfuhOJLBHY8/ZGvRn09jeCYQYZyBchLJ4uD7hOsw19rHvAXDvXmP6qPjIEpMZw3fzFptin1ceJQK\nsABR2XJwE2QNxYK+3j8nhRJ4op9XGZEIPBWmTdswSA8MsJ17sjvDxBMchE8n+xm3fQicRLJOl6h8\nfYjKFyaGsG/eQ62ItXQp2fIUpT0dERwiy2zT96DwCXsH712WZz3CiglTbUz1d7ApW8zp7EPXcdw2\np7ezodvEycgTlWe9hNVAuQ01K4H2G+AjYBFwbB8VbaNHpWdu83v/H8uz0bAojwLPRsP+E2AAhqiS\nHx1wtuQAAAAASUVORK5CYII=' />\n\n",
+  "version": "1.0.0"
+}

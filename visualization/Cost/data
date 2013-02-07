@@ -1,0 +1,204 @@
+/* This is where the data is called and styled. */
+/* Uncomment for use. */  
+@unPop: #fff4f9; /*1 - first fffde3*/
+@CableServed: #FFFDE3;/*2 #B6D15B, then fff4f9*/
+
+@LowTelServ: #9ea1bf;/*3*/
+@MidLowTelServ: #97bed0; /*5*/
+@MidHighTelServ: #ffb901; /*7*/
+@HighTelServ: #9ad657; /*9 - first was #92bf6a then #9ad657 then #dcff66*/
+@VHighTelServ: #0b03c3; /*9 - first was #92bf6a then #9ad657 then #dcff66*/
+
+@LowTelNServ: #464855;/*4*/ 
+@MidLowTelNServ: #7593a1; /*6*/
+@MidHighTelNServ: #d08603; /*8*/
+@HighTelNServ: #639e0a; /*10 - first was #7fbf3f*/
+@VHighTelNServ: #0e04fd; /*10 - first was #7fbf3f*/
+
+#county {
+  [zoom>4] {  
+    line-color: #c3c3c3; 
+    line-width:0.2;
+  }
+}
+
+#cqfttpcty {
+  [zoom>4] {
+    polygon-fill: @unPop;
+  }
+}
+
+/*
+--1 - un-populated
+--2 - served by cable
+--3 - above 635 and telco served
+--4 - above 635 and telco unserved
+--5 - 300 to 635 and telco served
+--6 - 300 to 635 and telco unserved
+--7 - 150 to 300 and telco served
+--8 - 150 to 300 and telco unserved
+--9 - 75 to 150 and telco served
+--10 - 75 to 150 and telco unserved
+--11 - less than 75 and telco served
+--12 - less than 75 and telco unserved
+--13 - water
+*/
+
+#cost_poly{
+  [myvalue='1'] {
+  polygon-fill: @unPop;
+    }
+  [myvalue = '2'] {
+  polygon-fill: @CableServed;
+    }
+  [myvalue = '3'] {
+  polygon-fill: @VHighTelServ;
+    }  
+  [myvalue = '4'] {
+  polygon-fill: @CableServed;
+    }
+  [myvalue = '5'] {
+  polygon-fill: @HighTelServ;
+    }
+  [myvalue = '6'] {
+  polygon-fill: @HighTelNServ;
+    }
+  [myvalue = '7'] {
+  polygon-fill: @MidLowTelServ;
+    }
+  [myvalue = '8'] {
+  polygon-fill: @MidLowTelNServ;
+    }
+  [myvalue = '9'] {
+  polygon-fill: @MidHighTelServ;
+    }
+  [myvalue = '10'] {
+  polygon-fill: @MidHighTelNServ;
+    } 
+  [myvalue = '11'] {
+  polygon-fill: @LowTelServ;
+    }
+  [myvalue = '12'] {
+  polygon-fill: @LowTelNServ;
+    }   
+  [myvalue = '13'] {
+  polygon-fill: @water;
+    }
+}
+
+/***********************************************************************
+/***********************************************************************
+/************************STYLING for COST4******************************
+/***********************************************************************
+/***********************************************************************
+
+/*
+--1 - un-populated
+--2 - served by cable
+--3 - above 300 and telco served
+--4 - above 300 and telco unserved
+--5 - 150 to 300 and telco served
+--6 - 150 to 300 and telco unserved
+--7 - 75 to 150 and telco served
+--8 - 75 to 150 and telco unserved
+--9 - less than 75 and telco served
+--10 - less than 75 and telco unserved
+--11 - water
+*/
+/*
+#cost_poly{
+  [myvalue='1'] {
+  polygon-fill: @unPop;
+    }
+  [myvalue = '2'] {
+  polygon-fill: @CableServed;
+    }
+  [myvalue = '3'] {
+  polygon-fill: @HighTelServ;
+    }
+  [myvalue = '4'] {
+  polygon-fill: @HighTelNServ;
+    }
+  [myvalue = '5'] {
+  polygon-fill: @MidLowTelServ;
+    }
+  [myvalue = '6'] {
+  polygon-fill: @MidLowTelNServ;
+    }
+  [myvalue = '7'] {
+  polygon-fill: @MidHighTelServ;
+    }
+  [myvalue = '8'] {
+  polygon-fill: @MidHighTelNServ;
+    } 
+  [myvalue = '9'] {
+  polygon-fill: @LowTelServ;
+    }
+  [myvalue = '10'] {
+  polygon-fill: @LowTelNServ;
+    }   
+  [myvalue = '11'] {
+  polygon-fill: @water;
+    }
+}
+*/
+
+/***********************************************************************
+/***********************************************************************
+/************************ORIGINALSTYLING********************************
+/***********************************************************************
+/***********************************************************************
+/* This is where the data is called and styled. */
+/* Uncomment for use.   
+@unPop: #FFFDE3; /*1
+@CableServed: #B6D15B;/*2
+@LowTelServ: #FFBA40;/*3
+@LowTelNServ: #A66A00;/*4
+@MidTelServ: #6A93D4; /*5
+@MidTelNServ: #200772; /*6
+@HighTelServ: #DDABA7; /*7
+@HighTelNServ: #A60000; /*8
+@under: #7aee3c; /*#00A876;
+@una: #ff8240; 
+/*
+--1 - un-populated
+--2 - served by cable
+--3 - above 240 and telco served
+--4 - above 240 and telco unserved
+--5 - 70 to 240 and telco served
+--6 - 70 to 240 and telco unserved
+--7 - less than 70 and telco served
+--8 - less than 70 and telco unserved
+--9 - water
+*/
+/*
+#cost_poly{
+  [myvalue='1'] {
+  polygon-fill: @unPop;
+    }
+  [myvalue = '2'] {
+  polygon-fill: @CableServed;
+    }
+  [myvalue = '3'] {
+  polygon-fill: @HighTelServ;
+    }
+  [myvalue = '4'] {
+  polygon-fill: @HighTelNServ;
+    }
+  [myvalue = '5'] {
+  polygon-fill: @MidTelServ;
+    }
+  [myvalue = '6'] {
+  polygon-fill: @MidTelNServ;
+    }
+  [myvalue = '7'] {
+  polygon-fill: @LowTelServ;
+    }
+  [myvalue = '8'] {
+  polygon-fill: @LowTelNServ;
+    } 
+  [myvalue = '9'] {
+  polygon-fill: @water;
+    }
+}
+*/
